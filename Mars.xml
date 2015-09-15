@@ -86,24 +86,20 @@
         <statement name="ELSE">
           <block type="movement_stutter" id="215">
             <next>
-              <block type="oled_cleardisplay" id="223">
+              <block type="oled_setcursor" id="230" inline="true">
+                <value name="STARTX">
+                  <block type="math_number" id="231">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="STARTY">
+                  <block type="math_number" id="232">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
                 <next>
-                  <block type="oled_setcursor" id="230" inline="true">
-                    <value name="STARTX">
-                      <block type="math_number" id="231">
-                        <field name="NUM">0</field>
-                      </block>
-                    </value>
-                    <value name="STARTY">
-                      <block type="math_number" id="232">
-                        <field name="NUM">0</field>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="oled_drawtext" id="241">
-                        <field name="TEXT">Water!</field>
-                      </block>
-                    </next>
+                  <block type="oled_drawtext" id="241">
+                    <field name="TEXT">Water!</field>
                   </block>
                 </next>
               </block>
@@ -111,17 +107,17 @@
           </block>
         </statement>
         <next>
-          <block type="oled_cleardisplay" id="119">
+          <block type="oled_cleardisplay" id="223">
             <next>
               <block type="oled_setcursor" id="177" inline="true">
                 <value name="STARTX">
                   <block type="math_number" id="184">
-                    <field name="NUM">10</field>
+                    <field name="NUM">30</field>
                   </block>
                 </value>
                 <value name="STARTY">
                   <block type="math_number" id="185">
-                    <field name="NUM">10</field>
+                    <field name="NUM">30</field>
                   </block>
                 </value>
                 <next>
