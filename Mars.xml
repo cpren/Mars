@@ -1,6 +1,11 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="controls_whileUntil" id="7" inline="false" x="68" y="34">
     <field name="MODE">WHILE</field>
+    <value name="NUMBER">
+      <block type="math_number" id="110">
+        <field name="NUM">1</field>
+      </block>
+    </value>
     <statement name="DO">
       <block type="controls_if" id="82" inline="false">
         <mutation else="1"></mutation>
