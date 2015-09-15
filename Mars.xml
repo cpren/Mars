@@ -26,7 +26,7 @@
         </value>
         <statement name="DO0">
           <block type="controls_if" id="222" inline="false">
-            <mutation elseif="2" else="1"></mutation>
+            <mutation elseif="2"></mutation>
             <value name="IF0">
               <block type="logic_compare" id="248" inline="true">
                 <field name="OP">LT</field>
@@ -81,9 +81,9 @@
             <statement name="DO2">
               <block type="movement_forward" id="325"></block>
             </statement>
-            <statement name="ELSE">
+            <next>
               <block type="movement_forward" id="364"></block>
-            </statement>
+            </next>
           </block>
         </statement>
         <statement name="ELSE">
@@ -138,12 +138,12 @@
               <block type="oled_setcursor" id="177" inline="true">
                 <value name="STARTX">
                   <block type="math_number" id="184">
-                    <field name="NUM">30</field>
+                    <field name="NUM">35</field>
                   </block>
                 </value>
                 <value name="STARTY">
                   <block type="math_number" id="185">
-                    <field name="NUM">30</field>
+                    <field name="NUM">35</field>
                   </block>
                 </value>
                 <next>
