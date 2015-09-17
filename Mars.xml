@@ -25,36 +25,10 @@
           </block>
         </value>
         <statement name="DO0">
-          <block type="movement_stutter" id="120">
-            <next>
-              <block type="robot_delay" id="133" inline="true">
-                <value name="DELAY">
-                  <block type="math_number" id="140">
-                    <field name="NUM">10</field>
-                  </block>
-                </value>
-                <next>
-                  <block type="movement_stop" id="152"></block>
-                </next>
-              </block>
-            </next>
-          </block>
+          <block type="movement_stutter" id="120"></block>
         </statement>
         <statement name="ELSE">
-          <block type="movement_reverse" id="130">
-            <next>
-              <block type="robot_delay" id="141" inline="true">
-                <value name="DELAY">
-                  <block type="math_number" id="142">
-                    <field name="NUM">10</field>
-                  </block>
-                </value>
-                <next>
-                  <block type="movement_stop" id="162"></block>
-                </next>
-              </block>
-            </next>
-          </block>
+          <block type="movement_reverse" id="130"></block>
         </statement>
       </block>
     </statement>
