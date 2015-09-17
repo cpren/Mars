@@ -1,4 +1,45 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_whileUntil" id="452" inline="false" x="116" y="-32">
+    <field name="MODE">WHILE</field>
+    <value name="NUMBER">
+      <block type="math_number" id="459">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="controls_if" id="391" inline="false">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="410" inline="true">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="sensor_spectrometer" id="417">
+                <field name="LIGHT">BLUE</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="424">
+                <field name="NUM">90</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="procedures_callnoreturn" id="431">
+            <mutation name="Water_Alert"></mutation>
+            <next>
+              <block type="movement_stutter" id="445"></block>
+            </next>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="procedures_callnoreturn" id="384">
+            <mutation name="Object_Close"></mutation>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
   <block type="procedures_defnoreturn" id="62" x="505" y="-32">
     <mutation></mutation>
     <field name="NAME">Current_Value</field>
@@ -25,9 +66,6 @@
         </next>
       </block>
     </statement>
-  </block>
-  <block type="procedures_callnoreturn" id="384" x="149" y="-1">
-    <mutation name="Object_Close"></mutation>
   </block>
   <block type="procedures_defnoreturn" id="38" x="506" y="92">
     <mutation></mutation>
