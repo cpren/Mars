@@ -1,5 +1,5 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="oled_cleardisplay" id="1" x="39" y="-30">
+  <block type="oled_cleardisplay" id="1" x="-10" y="-48">
     <next>
       <block type="controls_whileUntil" id="2" inline="false">
         <field name="MODE">WHILE</field>
@@ -27,71 +27,8 @@
               </block>
             </value>
             <statement name="DO0">
-              <block type="controls_if" id="8" inline="false">
-                <mutation elseif="2"></mutation>
-                <value name="IF0">
-                  <block type="logic_compare" id="9" inline="true">
-                    <field name="OP">LT</field>
-                    <value name="A">
-                      <block type="sensor_object" id="10">
-                        <field name="OBJECT">LEFTFRONT</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_number" id="11">
-                        <field name="NUM">15</field>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-                <statement name="DO0">
-                  <block type="movement_right" id="12"></block>
-                </statement>
-                <value name="IF1">
-                  <block type="logic_compare" id="13" inline="true">
-                    <field name="OP">LT</field>
-                    <value name="A">
-                      <block type="sensor_object" id="14">
-                        <field name="OBJECT">RIGHTFRONT</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_number" id="15">
-                        <field name="NUM">15</field>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-                <statement name="DO1">
-                  <block type="movement_left" id="16"></block>
-                </statement>
-                <value name="IF2">
-                  <block type="logic_compare" id="17" inline="true">
-                    <field name="OP">LT</field>
-                    <value name="A">
-                      <block type="sensor_object" id="18">
-                        <field name="OBJECT">REAR</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_number" id="19">
-                        <field name="NUM">15</field>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-                <statement name="DO2">
-                  <block type="movement_forward" id="20"></block>
-                </statement>
-                <next>
-                  <block type="movement_forward" id="21">
-                    <next>
-                      <block type="procedures_callnoreturn" id="78">
-                        <mutation name="Current_Value"></mutation>
-                      </block>
-                    </next>
-                  </block>
-                </next>
+              <block type="procedures_callnoreturn" id="100">
+                <mutation name="Object_Check"></mutation>
               </block>
             </statement>
             <statement name="ELSE">
@@ -108,7 +45,7 @@
       </block>
     </next>
   </block>
-  <block type="procedures_defnoreturn" id="38" x="494" y="-36">
+  <block type="procedures_defnoreturn" id="38" x="481" y="-47">
     <mutation></mutation>
     <field name="NAME">Display_Water</field>
     <statement name="STACK">
@@ -154,7 +91,7 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="62" x="496" y="149">
+  <block type="procedures_defnoreturn" id="62" x="404" y="153">
     <mutation></mutation>
     <field name="NAME">Current_Value</field>
     <statement name="STACK">
@@ -176,6 +113,78 @@
                 <field name="LIGHT">BLUE</field>
               </block>
             </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="93" x="408" y="271">
+    <mutation></mutation>
+    <field name="NAME">Object_Check</field>
+    <statement name="STACK">
+      <block type="controls_if" id="8" inline="false">
+        <mutation elseif="2"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="9" inline="true">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="sensor_object" id="10">
+                <field name="OBJECT">LEFTFRONT</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="11">
+                <field name="NUM">15</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="movement_right" id="12"></block>
+        </statement>
+        <value name="IF1">
+          <block type="logic_compare" id="13" inline="true">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="sensor_object" id="14">
+                <field name="OBJECT">RIGHTFRONT</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="15">
+                <field name="NUM">15</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="movement_left" id="16"></block>
+        </statement>
+        <value name="IF2">
+          <block type="logic_compare" id="17" inline="true">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="sensor_object" id="18">
+                <field name="OBJECT">REAR</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="19">
+                <field name="NUM">15</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO2">
+          <block type="movement_forward" id="20"></block>
+        </statement>
+        <next>
+          <block type="movement_forward" id="21">
+            <next>
+              <block type="procedures_callnoreturn" id="78">
+                <mutation name="Current_Value"></mutation>
+              </block>
+            </next>
           </block>
         </next>
       </block>
