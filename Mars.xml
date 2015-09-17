@@ -42,16 +42,16 @@
                       </block>
                     </value>
                     <statement name="DO0">
+                      <block type="procedures_callnoreturn" id="384">
+                        <mutation name="Object_Close"></mutation>
+                      </block>
+                    </statement>
+                    <statement name="ELSE">
                       <block type="procedures_callnoreturn" id="431">
                         <mutation name="Water_Alert"></mutation>
                         <next>
                           <block type="movement_stutter" id="445"></block>
                         </next>
-                      </block>
-                    </statement>
-                    <statement name="ELSE">
-                      <block type="procedures_callnoreturn" id="384">
-                        <mutation name="Object_Close"></mutation>
                       </block>
                     </statement>
                   </block>
