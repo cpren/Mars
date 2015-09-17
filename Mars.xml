@@ -35,6 +35,9 @@
                         <field name="NUM">10</field>
                       </block>
                     </value>
+                    <next>
+                      <block type="movement_stop" id="152"></block>
+                    </next>
                   </block>
                 </next>
               </block>
@@ -48,6 +51,9 @@
                         <field name="NUM">10</field>
                       </block>
                     </value>
+                    <next>
+                      <block type="movement_stop" id="162"></block>
+                    </next>
                   </block>
                 </next>
               </block>
