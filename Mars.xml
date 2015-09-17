@@ -1,5 +1,5 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="oled_cleardisplay" id="1" x="8" y="-54">
+  <block type="oled_cleardisplay" id="1" x="39" y="-30">
     <next>
       <block type="controls_whileUntil" id="2" inline="false">
         <field name="MODE">WHILE</field>
@@ -84,52 +84,21 @@
                   <block type="movement_forward" id="20"></block>
                 </statement>
                 <next>
-                  <block type="movement_forward" id="21"></block>
+                  <block type="movement_forward" id="21">
+                    <next>
+                      <block type="procedures_callnoreturn" id="47">
+                        <mutation name="Display Water Value"></mutation>
+                      </block>
+                    </next>
+                  </block>
                 </next>
               </block>
             </statement>
             <statement name="ELSE">
               <block type="movement_stutter" id="22">
                 <next>
-                  <block type="oled_setcursor" id="23" inline="true">
-                    <value name="STARTX">
-                      <block type="math_number" id="24">
-                        <field name="NUM">0</field>
-                      </block>
-                    </value>
-                    <value name="STARTY">
-                      <block type="math_number" id="25">
-                        <field name="NUM">0</field>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="oled_drawtext" id="26">
-                        <field name="TEXT">Water!</field>
-                        <next>
-                          <block type="oled_setcursor" id="27" inline="true">
-                            <value name="STARTX">
-                              <block type="math_number" id="28">
-                                <field name="NUM">50</field>
-                              </block>
-                            </value>
-                            <value name="STARTY">
-                              <block type="math_number" id="29">
-                                <field name="NUM">0</field>
-                              </block>
-                            </value>
-                            <next>
-                              <block type="oled_drawnumber" id="30" inline="true">
-                                <value name="NUMBER">
-                                  <block type="sensor_spectrometer" id="31">
-                                    <field name="LIGHT">BLUE</field>
-                                  </block>
-                                </value>
-                              </block>
-                            </next>
-                          </block>
-                        </next>
-                      </block>
-                    </next>
+                  <block type="procedures_callnoreturn" id="52">
+                    <mutation name="Display Water Value"></mutation>
                   </block>
                 </next>
               </block>
@@ -138,5 +107,51 @@
         </statement>
       </block>
     </next>
+  </block>
+  <block type="procedures_defnoreturn" id="38" x="494" y="-36">
+    <mutation></mutation>
+    <field name="NAME">Display Water Value</field>
+    <statement name="STACK">
+      <block type="oled_setcursor" id="23" inline="true">
+        <value name="STARTX">
+          <block type="math_number" id="24">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="STARTY">
+          <block type="math_number" id="25">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="oled_drawtext" id="26">
+            <field name="TEXT">Water!</field>
+            <next>
+              <block type="oled_setcursor" id="27" inline="true">
+                <value name="STARTX">
+                  <block type="math_number" id="28">
+                    <field name="NUM">50</field>
+                  </block>
+                </value>
+                <value name="STARTY">
+                  <block type="math_number" id="29">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="oled_drawnumber" id="30" inline="true">
+                    <value name="NUMBER">
+                      <block type="sensor_spectrometer" id="31">
+                        <field name="LIGHT">BLUE</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
   </block>
 </xml>
