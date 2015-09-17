@@ -44,6 +44,9 @@
                     <statement name="DO0">
                       <block type="procedures_callnoreturn" id="384">
                         <mutation name="Object_Close"></mutation>
+                        <next>
+                          <block type="movement_stutter" id="568"></block>
+                        </next>
                       </block>
                     </statement>
                     <statement name="ELSE">
