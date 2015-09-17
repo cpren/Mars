@@ -28,7 +28,7 @@
                     <mutation else="1"></mutation>
                     <value name="IF0">
                       <block type="logic_compare" id="410" inline="true">
-                        <field name="OP">LT</field>
+                        <field name="OP">GT</field>
                         <value name="A">
                           <block type="sensor_spectrometer" id="417">
                             <field name="LIGHT">BLUE</field>
@@ -42,16 +42,16 @@
                       </block>
                     </value>
                     <statement name="DO0">
-                      <block type="procedures_callnoreturn" id="384">
-                        <mutation name="Object_Close"></mutation>
-                      </block>
-                    </statement>
-                    <statement name="ELSE">
                       <block type="procedures_callnoreturn" id="431">
                         <mutation name="Water_Alert"></mutation>
                         <next>
                           <block type="movement_stutter" id="445"></block>
                         </next>
+                      </block>
+                    </statement>
+                    <statement name="ELSE">
+                      <block type="procedures_callnoreturn" id="384">
+                        <mutation name="Object_Close"></mutation>
                       </block>
                     </statement>
                   </block>
@@ -327,7 +327,17 @@
               <block type="movement_forward" id="331"></block>
             </statement>
             <statement name="ELSE">
-              <block type="movement_forward" id="332"></block>
+              <block type="movement_forward" id="332">
+                <next>
+                  <block type="robot_delay" id="550" inline="true">
+                    <value name="DELAY">
+                      <block type="math_number" id="557">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
             </statement>
           </block>
         </statement>
