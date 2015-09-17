@@ -84,7 +84,13 @@
                   <block type="movement_forward" id="20"></block>
                 </statement>
                 <next>
-                  <block type="movement_forward" id="21"></block>
+                  <block type="movement_forward" id="21">
+                    <next>
+                      <block type="procedures_callnoreturn" id="57">
+                        <mutation name="Display_Water"></mutation>
+                      </block>
+                    </next>
+                  </block>
                 </next>
               </block>
             </statement>
