@@ -63,7 +63,7 @@
       </block>
     </next>
   </block>
-  <block type="procedures_defnoreturn" id="15" x="505" y="-32">
+  <block type="procedures_defnoreturn" id="15" x="497" y="-72">
     <mutation></mutation>
     <field name="NAME">Current_Value</field>
     <statement name="STACK">
@@ -90,7 +90,7 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="21" x="506" y="92">
+  <block type="procedures_defnoreturn" id="21" x="495" y="48">
     <mutation></mutation>
     <field name="NAME">Water_Alert</field>
     <statement name="STACK">
@@ -136,7 +136,7 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="31" x="504" y="290">
+  <block type="procedures_defnoreturn" id="31" x="493" y="234">
     <mutation></mutation>
     <field name="NAME">Object_Close</field>
     <statement name="STACK">
